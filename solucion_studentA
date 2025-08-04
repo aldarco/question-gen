@@ -1,0 +1,102 @@
+### **Problema 1: Diferencias entre métodos de intervalo y métodos abiertos**  
+
+1. **Garantía de convergencia**:  
+   - **Métodos de intervalo (ej. bisección)**: Siempre convergen si la función es continua y cambia de signo en el intervalo.  
+   - **Métodos abiertos (ej. Newton-Raphson)**: No garantizan convergencia; dependen de la elección del punto inicial y el comportamiento de la función.  
+
+2. **Velocidad de convergencia (orden)**:  
+   - **Bisección**: Convergencia lineal (orden 1).  
+   - **Newton-Raphson**: Convergencia cuadrática (orden 2) bajo condiciones ideales.  
+
+3. **Requerimientos de información sobre la función**:  
+   - **Bisección**: Solo requiere evaluaciones de función con cambio de signo.  
+   - **Newton-Raphson**: Necesita la función y su derivada.  
+
+4. **Estabilidad numérica**:  
+   - **Bisección**: Más estable pero lento.  
+   - **Newton-Raphson**: Menos estable (puede diverger) pero más rápido si converge.  
+
+---  
+
+### **Problema 2: Aplicación de Newton-Raphson**  
+
+**1. Fórmula de iteración**:  
+   \[
+   f(x) = e^{-x} - \ln(x) \quad \Rightarrow \quad f'(x) = -e^{-x} - \frac{1}{x}
+   \]
+   \[
+   x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)} = x_k - \frac{e^{-x_k} - \ln(x_k)}{-e^{-x_k} - \frac{1}{x_k}}
+   \]  
+
+**2. Dos iteraciones con \( x_0 = 1.5 \)** (valores aproximados):  
+   - **Iteración 1**:  
+     \[
+     f(1.5) = e^{-1.5} - \ln(1.5) \approx 0.2231 - 0.4055 = -0.1824
+     \]
+     \[
+     f'(1.5) = -e^{-1.5} - \frac{1}{1.5} \approx -0.2231 - 0.6667 = -0.8898
+     \]
+     \[
+     x_1 = 1.5 - \frac{-0.1824}{-0.8898} \approx 1.5 - 0.2050 = 1.2950
+     \]
+     Error relativo: \( \left| \frac{1.2950 - 1.5}{1.2950} \right| \times 100\% \approx 15.83\% \)  
+
+   - **Iteración 2**:  
+     \[
+     f(1.2950) \approx e^{-1.2950} - \ln(1.2950) \approx 0.2739 - 0.2589 = 0.0150
+     \]
+     \[
+     f'(1.2950) \approx -e^{-1.2950} - \frac{1}{1.2950} \approx -0.2739 - 0.7722 = -1.0461
+     \]
+     \[
+     x_2 = 1.2950 - \frac{0.0150}{-1.0461} \approx 1.2950 + 0.0143 = 1.3093
+     \]
+     Error relativo: \( \left| \frac{1.3093 - 1.2950}{1.3093} \right| \times 100\% \approx 1.09\% \)  
+
+**3. ¿Por qué podría no converger si \( x_0 \approx 0 \)?**  
+   - Cerca de \( x = 0 \), \( \ln(x) \to -\infty \) y \( f'(x) \to -\infty \), lo que puede causar inestabilidad numérica o división por cero.  
+
+---  
+
+### **Problema 3: Convergencia de Newton-Raphson**  
+
+1. **¿Es cierta la afirmación?**  
+   No, el método no siempre converge cuadráticamente. Depende de la función, la elección de \( x_0 \) y la multiplicidad de la raíz.  
+
+2. **Condiciones para convergencia cuadrática**:  
+   - La función debe ser dos veces diferenciable en la vecindad de la raíz.  
+   - La derivada \( f'(x) \) no debe ser cero en la raíz.  
+
+3. **Ejemplo de no convergencia**:  
+   \( f(x) = x^{1/3} \) con \( x_0 = 1 \). Las iteraciones oscilan o divergen porque la derivada se vuelve infinita cerca de la raíz \( x = 0 \).  
+
+---  
+
+### **Problema 4: Comparación de métodos**  
+
+**1. Bisección (número mínimo de iteraciones)**:  
+   \[
+   \text{Error} \leq \frac{b - a}{2^n} < 0.001 \quad \Rightarrow \quad \frac{3 - 2}{2^n} < 0.001
+   \]
+   \[
+   2^n > 1000 \quad \Rightarrow \quad n > \log_2(1000) \approx 9.96 \quad \Rightarrow \quad n_{\text{mín}} = 10
+   \]  
+
+**2. Newton-Raphson (una iteración con \( x_0 = 2.5 \))**:  
+   \[
+   f(2.5) = (2.5)^3 - 2(2.5) - 5 = 15.625 - 5 - 5 = 5.625
+   \]
+   \[
+   f'(2.5) = 3(2.5)^2 - 2 = 18.75 - 2 = 16.75
+   \]
+   \[
+   x_1 = 2.5 - \frac{5.625}{16.75} \approx 2.1642
+   \]  
+
+**3. Comparación de eficiencia**:  
+   - **Bisección**: 1 evaluación de función por iteración (pero requiere muchas iteraciones).  
+   - **Newton-Raphson**: 2 evaluaciones por iteración (\( f \) y \( f' \)), pero converge más rápido.  
+
+---  
+
+Si necesitas más detalles o correcciones, dime. ¡Espero que esto ayude!

@@ -1,0 +1,43 @@
+Aquí tienes 4 problemas de examen bien definidos, equilibrados entre teoría y aplicación, basados en el contenido proporcionado:
+
+---
+
+### **Problema 1 (Teórico - Métodos Abiertos)**  
+Explique las diferencias fundamentales entre los **métodos de intervalo** (como bisección) y los **métodos abiertos** (como Newton-Raphson) para resolver ecuaciones no lineales. Incluya en su respuesta:  
+1. Garantía de convergencia.  
+2. Velocidad de convergencia (orden).  
+3. Requerimientos de información sobre la función (ej: derivadas).  
+4. Estabilidad numérica.  
+
+---
+
+### **Problema 2 (Aplicación - Newton-Raphson)**  
+Dada la función $f(x) = e^{-x} - \ln(x)$:  
+1. Derive la fórmula de iteración para el método de Newton-Raphson ($x_{k+1}$ en términos de $x_k$).  
+2. Realice **dos iteraciones** del método comenzando con $x_0 = 1.5$. Calcule el error relativo porcentual en cada paso.  
+3. ¿Por qué este método podría no converger si $x_0$ se elige muy cercano a cero?  
+
+---
+
+### **Problema 3 (Teórico - Convergencia)**  
+Un estudiante afirma que *"el método de Newton-Raphson siempre converge cuadráticamente"*.  
+1. ¿Es cierta esta afirmación? Justifique su respuesta.  
+2. Mencione **dos condiciones** necesarias para que el método alcance convergencia cuadrática.  
+3. Dé un ejemplo de función y punto inicial donde el método **no converja**.  
+
+---
+
+### **Problema 4 (Aplicación - Comparación de Métodos)**  
+Se quiere encontrar la raíz de $f(x) = x^3 - 2x - 5$ en $[2, 3]$:  
+1. **Bisección**: Calcule el número mínimo de iteraciones necesarias para alcanzar un error absoluto menor a $0.001$.  
+2. **Newton-Raphson**: Realice una iteración con $x_0 = 2.5$ (use $f'(x) = 3x^2 - 2$).  
+3. Compare la eficiencia de ambos métodos en términos de evaluaciones de función por iteración.  
+
+---
+
+**Notas:**  
+- Los problemas cubren conceptos clave: convergencia, estabilidad, aplicaciones y comparaciones.  
+- Se incluyen ecuaciones en LaTeX y preguntas que requieren análisis crítico.  
+- El Problema 4 es especialmente útil para evaluar comprensión práctica y teórica combinada.  
+
+¿Necesitas alguna variación o ajuste en la dificultad?
