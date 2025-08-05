@@ -1,43 +1,48 @@
-Aquí tienes 4 problemas de examen bien definidos, equilibrados entre teoría y aplicación, basados en el contenido proporcionado:
+Aquí tienes 4 problemas de examen bien definidos, equilibrados entre teoría y aplicación, basados en el contexto proporcionado:
 
 ---
 
-### **Problema 1 (Teórico - Métodos Abiertos)**  
-Explique las diferencias fundamentales entre los **métodos de intervalo** (como bisección) y los **métodos abiertos** (como Newton-Raphson) para resolver ecuaciones no lineales. Incluya en su respuesta:  
-1. Garantía de convergencia.  
-2. Velocidad de convergencia (orden).  
-3. Requerimientos de información sobre la función (ej: derivadas).  
-4. Estabilidad numérica.  
+### **Problema 1 (Teórico)**  
+**Pregunta:**  
+Compare las garantías de convergencia y los requisitos de información inicial entre los **métodos de intervalo** (e.g., bisección) y los **métodos abiertos** (e.g., Newton-Raphson). Explique por qué el método de bisección siempre converge pero es más lento, mientras que Newton-Raphson puede divergir pero tiene convergencia cuadrática.  
+
+**Pista:** Considere el teorema del valor intermedio para bisección y la necesidad de \( f'(x) \) para Newton-Raphson.  
 
 ---
 
-### **Problema 2 (Aplicación - Newton-Raphson)**  
-Dada la función $f(x) = e^{-x} - \ln(x)$:  
-1. Derive la fórmula de iteración para el método de Newton-Raphson ($x_{k+1}$ en términos de $x_k$).  
-2. Realice **dos iteraciones** del método comenzando con $x_0 = 1.5$. Calcule el error relativo porcentual en cada paso.  
-3. ¿Por qué este método podría no converger si $x_0$ se elige muy cercano a cero?  
+### **Problema 2 (Aplicado)**  
+**Pregunta:**  
+Aplique el **método de Newton-Raphson** para encontrar una raíz de \( f(x) = e^{-x} - x \) con un valor inicial \( x_0 = 1 \). Realice 3 iteraciones y calcule el error relativo porcentual en cada paso. Use \( x_{\text{real}} \approx 0.5671 \).  
+
+**Fórmulas proporcionadas:**  
+\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}, \quad f'(x) = -e^{-x} - 1
+\]  
+\[
+\text{Error relativo \%} = \left| \frac{x_{n+1} - x_n}{x_{n+1}} \right| \times 100
+\]
 
 ---
 
-### **Problema 3 (Teórico - Convergencia)**  
-Un estudiante afirma que *"el método de Newton-Raphson siempre converge cuadráticamente"*.  
-1. ¿Es cierta esta afirmación? Justifique su respuesta.  
-2. Mencione **dos condiciones** necesarias para que el método alcance convergencia cuadrática.  
-3. Dé un ejemplo de función y punto inicial donde el método **no converja**.  
+### **Problema 3 (Teórico-Práctico)**  
+**Pregunta:**  
+El método de la **falsa posición** ajusta el intervalo \([a, b]\) en cada iteración usando una aproximación lineal.  
+a) Demuestre que la fórmula para \( c \) es:  
+\[
+c = \frac{a \cdot f(b) - b \cdot f(a)}{f(b) - f(a)}.
+\]  
+b) Para \( f(x) = \ln(x) - \cos(x) \) en \([1, 2]\), calcule \( c \) en la primera iteración.  
 
 ---
 
-### **Problema 4 (Aplicación - Comparación de Métodos)**  
-Se quiere encontrar la raíz de $f(x) = x^3 - 2x - 5$ en $[2, 3]$:  
-1. **Bisección**: Calcule el número mínimo de iteraciones necesarias para alcanzar un error absoluto menor a $0.001$.  
-2. **Newton-Raphson**: Realice una iteración con $x_0 = 2.5$ (use $f'(x) = 3x^2 - 2$).  
-3. Compare la eficiencia de ambos métodos en términos de evaluaciones de función por iteración.  
+### **Problema 4 (Conceptual con Ejemplo)**  
+**Pregunta:**  
+La **convergencia cuadrática** del método de Newton-Raphson requiere que \( f'(x) \neq 0 \) en la raíz.  
+a) Explique por qué este requisito es esencial usando la expansión de Taylor.  
+b) Considere \( f(x) = x^2 \). Muestre que si \( x_0 = 1 \), el método converge en una iteración, pero si \( f(x) = x^3 \) y \( x_0 = 1 \), la convergencia es lineal (no cuadrática).  
+
+**Ayuda:** Para (b), calcule \( x_1 \) en ambos casos y compare.  
 
 ---
 
-**Notas:**  
-- Los problemas cubren conceptos clave: convergencia, estabilidad, aplicaciones y comparaciones.  
-- Se incluyen ecuaciones en LaTeX y preguntas que requieren análisis crítico.  
-- El Problema 4 es especialmente útil para evaluar comprensión práctica y teórica combinada.  
-
-¿Necesitas alguna variación o ajuste en la dificultad?
+Estos problemas evalúan comprensión teórica (ventajas/desventajas, convergencia), aplicación práctica (iteraciones, errores) y capacidad de derivar fórmulas clave. Todos están alineados con el material de clase proporcionado.
